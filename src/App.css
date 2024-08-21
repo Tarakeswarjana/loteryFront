@@ -1,0 +1,77 @@
+.today-result-main{
+  margin-top: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+  background-color: blanchedalmond;
+  /* height: 100vh; */
+
+}
+.textTitle{
+  font-size: 40px;
+  font-weight: 30px;
+}
+/* .ViewButton{
+  padding: 10px 20px;
+  font-size: 40px;
+  font-weight: 60px;
+  color:green;
+  background-color: yellow;
+  width: 200px; 
+} */
+
+.morning{
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center horizontally */
+  justify-content: center;/* Center vertically */
+  gap: 8px;               /* Space between children */
+  text-align: center;   
+  padding: 40px;  /* Center text inside children */
+  border-bottom: 2px dashed black;
+  /* height: 100vh;          */
+}
+
+
+.ViewButton {
+  width: 200px;
+  height: 100px;
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
