@@ -3,6 +3,7 @@ import HtmlToPdf from './HtmlToPdf'
 const logo = require("../asssets/todayImg.png")
 
 function TodyResult() {
+
     return (
         <div className='today-result-main '>
             <div className='toplogo flex align-middle justify-center'><img alt='noimg' src={logo} /></div>

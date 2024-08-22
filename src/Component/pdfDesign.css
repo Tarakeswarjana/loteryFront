@@ -1,0 +1,119 @@
+
+.mainDiv{
+    padding: 20px 10px;
+    width:800px ;
+    /* height: 900px; */
+    background-color: aqua;
+    padding-bottom: 30px;
+
+}
+#divID{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+.topHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headingDiv{
+    margin: 0px 30px;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.pxh{
+    font-size: 60px;
+    font-weight: bold;
+    color: blue;
+
+}
+.hMiddle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap:2px
+}
+.lRes{
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
+}
+.mor{
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 5px solid red;
+    color: red;
+}
+.pCom{
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.dTime{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.dTime h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+.prHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prHeading h1{
+    font-size: 50px;
+    font-weight: bold;
+    border-bottom: 5px solid black;
+}
+.sHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sHeading h1{
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+.prize3{
+    font-size: 30px;
+}
+.prize4{
+    font-size: 20px;
+}
+.sPrizes{
+margin-left: 200px;
+margin-right: 200px;
+display: flex;
+flex-wrap: wrap;
+gap:1rem;
+align-items: center;
+justify-content: center;
+}
+.sPrizes p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.sPrizes4{
+    margin-left: 50px;
+margin-right: 50px;
+display: flex;
+flex-wrap: wrap;
+gap:1rem;
+align-items: center;
+justify-content: center;
+}
+.sPrizes4 p{
+    font-size: 20px;
+    font-weight: bold;
+}
