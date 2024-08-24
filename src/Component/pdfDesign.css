@@ -1,4 +1,11 @@
-
+.container{
+margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+    align-items: center;
+    justify-content: center;
+}
 .mainDiv{
     padding: 20px 10px;
     width:800px ;

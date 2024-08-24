@@ -3,8 +3,8 @@ import "./pdfDesign.css"
 const logoImg = require('../asssets/todayImg.png')
 
 
-function HtmlToPdf({ firstResult, restallResult }) {
-    console.log(firstResult, restallResult)
+function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gtime }) {
+    console.log(firstResult, secResult, thirdResult, fourthResult, "in Pdf Component")
     function convertHTMLtoPDF() {
         const { jsPDF } = window.jspdf;
 
@@ -20,18 +20,24 @@ function HtmlToPdf({ firstResult, restallResult }) {
         });
     }
 
-    const secondPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
-    const forthPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
+    const TimeReturnFunction = (gtime) => {
+        if (gtime.toLowerCase() === "morning")
+            return "2:30 PM"
+        if (gtime.toLowerCase() === "noon")
+            return "6:30 PM"
+        if (gtime.toLowerCase() === "evening")
+            return "10:00 PM"
+
+
+    }
+
+    // const secondPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
+    // const forthPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
 
     return (
         <div class="container">
 
-            <button type="button"
-                className='bg-red-400'
-                onClick={() => { convertHTMLtoPDF() }} >
-                Pdf Download
 
-            </button>
             <div id="divID">
                 <div class="mainDiv">
                     <div className='topHeading'><h1>Hong Kong Lottery</h1></div>
@@ -49,12 +55,12 @@ function HtmlToPdf({ firstResult, restallResult }) {
                         <div><img alt='noimage' src={logoImg} /></div>
 
                     </div>
-                    <div className='dTime'> <h1>26/11/2009</h1> <h1>Time-2:30PM</h1></div>
-                    <div className='prHeading'><h1>1st Prize/ 11A-89216</h1></div>
+                    <div className='dTime'> <h1>{date}</h1> <h1>Time-{TimeReturnFunction(gtime)}</h1></div>
+                    <div className='prHeading'><h1>1st Prize/ {firstResult}</h1></div>
                     <div className='sHeading'><h1>2ndPrize</h1></div>
                     <div className='sPrizes'>
                         {
-                            secondPrize.map((ele, id) => {
+                            secResult.map((ele, id) => {
                                 return <p key={id} className='sRest'>{ele}</p>
                             })
                         }
@@ -62,7 +68,7 @@ function HtmlToPdf({ firstResult, restallResult }) {
                     <div className='sHeading'><h1 className='prize3'>3rdPrize</h1></div>
                     <div className='sPrizes'>
                         {
-                            secondPrize.map((ele, id) => {
+                            thirdResult.map((ele, id) => {
                                 return <p key={id} className='sRest'>{ele}</p>
                             })
                         }
@@ -70,7 +76,7 @@ function HtmlToPdf({ firstResult, restallResult }) {
                     <div className='sHeading'><h1 className='prize4'>4thPrize</h1></div>
                     <div className='sPrizes4'>
                         {
-                            forthPrize.map((ele, id) => {
+                            fourthResult.map((ele, id) => {
                                 return <p key={id} className='sRest'>{ele}</p>
                             })
                         }
@@ -78,6 +84,15 @@ function HtmlToPdf({ firstResult, restallResult }) {
 
                 </div>
             </div>
+
+
+            <button
+                type="button"
+                className="bg-green-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-brown-600 transition ease-in-out duration-300 transform hover:scale-105 flex align-middle  justify-center"
+                onClick={() => { convertHTMLtoPDF() }}
+            >
+                PDF Download
+            </button>
         </div>
     )
 }
