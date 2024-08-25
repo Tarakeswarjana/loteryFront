@@ -88,3 +88,8 @@
   justify-content: center;
   text-align: center;
 }
+
+.react-tabs__tab--selected{
+  color : white !important;
+  background-color: green !important;
+}

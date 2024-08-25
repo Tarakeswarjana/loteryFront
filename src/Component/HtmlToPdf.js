@@ -48,7 +48,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                             <h1 className='pxh'>PXWELL</h1>
                             <p className='lRes'>Lottery Result</p>
 
-                            <p className='mor'>Morning</p>
+                            <p className='mor'>{gtime.toUpperCase()}</p>
                             <p className='pCom'>Pxwell.Com</p>
                         </div>
 

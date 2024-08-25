@@ -20,7 +20,7 @@ function PdfResult() {
         const dataResult = await searchLoteryResult(date, gtime)//first Result
         if (dataResult?.data?.length > 0) {
 
-            let firstRes = `11 ${dataResult.data[0].series}- ${dataResult.data[0].result}`
+            let firstRes = `${dataResult.data[0].pre_digit} ${dataResult.data[0].series}- ${dataResult.data[0].result}`
             setfirstResult(firstRes)
 
         } else {
