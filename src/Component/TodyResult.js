@@ -15,7 +15,7 @@ function TodyResult() {
 
     return (
         <div className='today-result-main '>
-            <div className='toplogo flex align-middle justify-center'><img alt='noimg' src={logo} /></div>
+            <div className='toplogo flex align-middle justify-center'><img alt='noimg' className='logo' src={logo} /></div>
             <div className='morning flex text-center align-middle justify-center flex-col gap-8' > <h2 className='textTitle'>Morning 2:30 PM</h2> <button
                 onClick={(ele) => {
                     navigate(`/pdfResult/${currentDate()}/Morning`)
@@ -34,7 +34,7 @@ function TodyResult() {
             {/* <div className='icons flex align-middle justify-center'></div>
             <div className='day flex align-middle justify-center'></div>
             <div className='evening flex align-middle justify-center'></div> */}
-            <div className='bottomLogo flex align-middle justify-center'><img alt='noimg' src={logo} /></div>
+            <div className='bottomLogo flex align-middle justify-center'><img alt='noimg' className='logo' src={logo} /></div>
 
 
 

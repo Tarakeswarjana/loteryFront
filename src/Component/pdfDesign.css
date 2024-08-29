@@ -5,19 +5,29 @@ margin-top: 2rem;
     gap:3rem;
     align-items: center;
     justify-content: center;
+    background-color: grey;
 }
 .mainDiv{
     padding: 20px 10px;
     width:800px ;
-    /* height: 900px; */
-    background-color: aqua;
+    background-color: white;
     padding-bottom: 30px;
-
+    border: 1px solid grey;
+    padding: 6px;
+    background-image: url("../asssets/todayImg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
 #divID{
     display: flex;  
     align-items: center;
     justify-content: center;
+    background-color: white;
+    margin-top: 13px;
+    padding: 26px;
 }
 .topHeading{
     display: flex;
@@ -35,7 +45,7 @@ margin-top: 2rem;
 .pxh{
     font-size: 60px;
     font-weight: bold;
-    color: blue;
+    color: #4d11dd;
 
 }
 .hMiddle{
@@ -46,7 +56,7 @@ margin-top: 2rem;
     gap:2px
 }
 .lRes{
-    font-size: 40px;
+    font-size: 33px;
     font-weight: bold;
     color: green;
 }
