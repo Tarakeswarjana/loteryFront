@@ -7,17 +7,37 @@ margin-top: 2rem;
     justify-content: center;
     background-color: grey;
 }
-.mainDiv{
+.mainDiv {
+    position: relative;
     padding: 20px 10px;
-    width:800px ;
+    width: 800px;
     background-color: white;
     padding-bottom: 30px;
     border: 1px solid grey;
     padding: 6px;
+    overflow: hidden;
+}
+
+.mainDiv::before {
+    content: "";
+    position: absolute;
+    top: 13%;
+    left: 17%;
+    right: 0;
+    bottom: 0;
     background-image: url("../asssets/todayImg.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+    height: 600px;
+    width: 500px;
+}
+
+.topHeading, .headingDiv, .dTime, .prHeading, .sHeading, .sPrizes, .sPrizes4 {
+    position: relative;
+    z-index: 1;
 }
 
 
