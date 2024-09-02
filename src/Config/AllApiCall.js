@@ -13,6 +13,11 @@ const searchsecondResult = async (gameDate, gameTime) => {
     return await HttpClient.post(endpoint, dataToSend);
 };
 
+const getFourthResultData = async (gameDate, gameName) => {
+    const endpoint = `/fetch_fifth_result.php?game_date=${gameDate}&game_type=${gameName}`;
+    return await HttpClient.get(endpoint);
+  };
+
 
 
 const viewAllResult = async (gameTime) => {
@@ -24,5 +29,6 @@ const viewAllResult = async (gameTime) => {
 export {
     searchLoteryResult,
     viewAllResult,
-    searchsecondResult
+    searchsecondResult,
+    getFourthResultData
 }

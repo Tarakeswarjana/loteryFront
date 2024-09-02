@@ -4,7 +4,8 @@ const logoImg = require('../asssets/todayImg.png')
 
 
 function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gtime }) {
-    console.log(firstResult, secResult, thirdResult, fourthResult, "in Pdf Component")
+    console.log( fourthResult, "in_Pdf_Component")
+
     function convertHTMLtoPDF() {
         const { jsPDF } = window.jspdf;
 
@@ -35,7 +36,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
     // const forthPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
 
     return (
-        <div class="container">
+        <div class="containers">
 
 
             <div id="divID">
@@ -43,20 +44,20 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                     <div className='topHeading'><h1>Hong Kong Lottery</h1></div>
                     <div className='headingDiv'>
 
-                        <div><img alt='noimage' src={logoImg} /></div>
+                        <div><img alt='noimage' src={logoImg} className='pdflogo'/></div>
                         <div className='hMiddle'>
-                            <h1 className='pxh'>PXWELL</h1>
+                            <h4 className='pxh'>PXWELL</h4>
                             <p className='lRes'>Lottery Result</p>
 
                             <p className='mor'>{gtime.toUpperCase()}</p>
                             <p className='pCom'>Pxwell.Com</p>
                         </div>
 
-                        <div><img alt='noimage' src={logoImg} /></div>
+                        <div><img alt='noimage' src={logoImg} className='pdflogo'/></div>
 
                     </div>
                     <div className='dTime'> <h1>{date}</h1> <h1>Time-{TimeReturnFunction(gtime)}</h1></div>
-                    <div className='prHeading'><h1>1st Prize/ {firstResult}</h1></div>
+                    <div className='prHeading'><h1>1st Prize / {firstResult}</h1></div>
                     <div className='sHeading'><h1>2ndPrize</h1></div>
                     <div className='sPrizes'>
                         {
@@ -77,6 +78,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                     <div className='sPrizes4'>
                         {
                             fourthResult.map((ele, id) => {
+                              
                                 return <p key={id} className='sRest'>{ele}</p>
                             })
                         }
