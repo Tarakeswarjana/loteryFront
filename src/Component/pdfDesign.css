@@ -1,20 +1,21 @@
-.container{
-margin-top: 2rem;
+.container {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap:3rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
     background-color: grey;
 }
+
 .mainDiv {
     position: relative;
     padding: 20px 10px;
-    width: 800px;
+    width: 90%; /* Adjust to be responsive */
+    max-width: 800px; /* Optional: to limit maximum width */
     background-color: white;
     padding-bottom: 30px;
     border: 1px solid grey;
-    padding: 6px;
     overflow: hidden;
 }
 
@@ -31,8 +32,8 @@ margin-top: 2rem;
     background-repeat: no-repeat;
     opacity: 0.3;
     z-index: 0;
-    height: 600px;
-    width: 500px;
+    height: 100%; /* Make it responsive */
+    width: 100%; /* Make it responsive */
 }
 
 .topHeading, .headingDiv, .dTime, .prHeading, .sHeading, .sPrizes, .sPrizes4 {
@@ -40,116 +41,170 @@ margin-top: 2rem;
     z-index: 1;
 }
 
-#divID{
-    display: flex;  
+#divID {
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     margin-top: 13px;
     padding: 26px;
+    margin-left: 1rem; /* Adjust margins */
+    margin-right: 1rem;
 }
-.topHeading{
+
+.topHeading {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.headingDiv{
-    margin: 0px 30px;
+
+.headingDiv {
+    margin: 0px 1rem; /* Adjust margin for responsiveness */
     display: flex;
     gap: 2rem;
     justify-content: space-between;
     align-items: center;
-
 }
-.pxh{
-    font-size: 60px;
+
+.pxh {
+    font-size: 4vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     color: #4d11dd;
-
 }
-.hMiddle{
+
+.hMiddle {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    gap:2px
+    gap: 2px;
 }
-.lRes{
-    font-size: 33px;
+
+.lRes {
+    font-size: 2vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     color: green;
 }
-.mor{
-    font-size: 30px;
+
+.mor {
+    font-size: 2vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     border-bottom: 5px solid red;
     color: red;
 }
-.pCom{
-    font-size: 15px;
-    font-weight: bold;
 
+.pCom {
+    font-size: 1rem; /* Adjust font size for responsiveness */
+    font-weight: bold;
 }
-.dTime{
+
+.dTime {
     display: flex;
     justify-content: space-between;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 1rem; /* Adjust margins for responsiveness */
+    margin-right: 1rem;
 }
-.dTime h1{
-    font-size: 30px;
+
+.dTime h1 {
+    font-size: 2.5vw; /* Use viewport width for responsiveness */
     font-weight: bold;
 }
-.prHeading{
+
+.prHeading {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.prHeading h1{
-    font-size: 50px;
+
+.prHeading h1 {
+    font-size: 3vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     border-bottom: 5px solid black;
 }
-.sHeading{
+
+.sHeading {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sHeading h1{
-    font-size: 40px;
+.sHeading h1 {
+    font-size: 2.5vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     border-bottom: 3px solid black;
 }
-.prize3{
-    font-size: 30px;
+
+.prize3 {
+    font-size: 2vw; /* Use viewport width for responsiveness */
 }
-.prize4{
-    font-size: 20px;
+
+.prize4 {
+    font-size: 1.5vw; /* Use viewport width for responsiveness */
 }
-.sPrizes{
-margin-left: 200px;
-margin-right: 200px;
-display: flex;
-flex-wrap: wrap;
-gap:1rem;
-align-items: center;
-justify-content: center;
+
+.sPrizes {
+    margin-left: 1rem; /* Adjust margins for responsiveness */
+    margin-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
 }
-.sPrizes p{
-    font-size: 20px;
+
+.sPrizes p {
+    margin-right: 29px;
+    font-size: 1.5rem; /* Adjust font size for responsiveness */
     font-weight: bold;
 }
-.sPrizes4{
-    margin-left: 50px;
-margin-right: 50px;
-display: flex;
-flex-wrap: wrap;
-gap:1rem;
-align-items: center;
-justify-content: center;
+
+.sPrizes4 {
+    margin-left: 1rem; /* Adjust margins for responsiveness */
+    margin-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
-.sPrizes4 p{
-    font-size: 20px;
+
+.sPrizes4 p {
+    font-size: 1.5rem; /* Adjust font size for responsiveness */
     font-weight: bold;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+    .mainDiv {
+        width: 90%; /* Adjust width to fit within smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .dTime {
+        margin-left: 1rem; /* Adjust margins */
+        margin-right: 1rem;
+        width: auto; /* Adjust width */
+    }
+
+    .prHeading h1 {
+        font-size: 1.5rem;/* Adjust font size */
+    }
+
+    .sPrizes {
+        margin-right: 0px;
+        gap: .5rem; /* Adjust gap */
+        margin-left: 0; /* Remove margins */
+        margin-right: 0;
+    }
+
+    .sPrizes p {
+        font-size: 0.8rem;
+        margin-right: 0px;
+    }
+    
+    .sPrizes4 p {
+        font-size: 0.8rem;
+        margin-right: 0px;
+    }
 }
