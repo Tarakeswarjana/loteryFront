@@ -4,21 +4,58 @@ const logoImg = require('../asssets/todayImg.png')
 
 
 function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gtime }) {
-    console.log(firstResult, secResult, thirdResult, fourthResult, "in Pdf Component")
-    function convertHTMLtoPDF() {
+    console.log(fourthResult, "in_Pdf_Component")
+
+    // function convertHTMLtoPDF() {
+    //     const { jsPDF } = window.jspdf;
+
+    //     let doc = new jsPDF('l', 'mm', [1500, 1400]);
+    //     let pdfjs = document.querySelector('#divID');
+
+    //     doc.html(pdfjs, {
+    //         callback: function (doc) {
+    //             doc.save("newpdf.pdf");
+    //         },
+    //         x: 12,
+    //         y: 12
+    //     });
+    // }
+    const convertHTMLtoPDF = () => {
         const { jsPDF } = window.jspdf;
+        const html2canvas = window.html2canvas;
 
-        let doc = new jsPDF('l', 'mm', [1500, 1400]);
-        let pdfjs = document.querySelector('#divID');
+        // Make sure the element is available
+        const element = document.querySelector("#pdfDiv");
+        if (!element) {
+            console.error("Element with id 'pdfDiv' not found.");
+            return;
+        }
 
-        doc.html(pdfjs, {
-            callback: function (doc) {
-                doc.save("newpdf.pdf");
-            },
-            x: 12,
-            y: 12
+        html2canvas(element).then(canvas => {
+            console.log(canvas.toDataURL()); // Log canvas data URL
+
+            let doc = new jsPDF('l', 'mm', 'a4'); // Landscape A4
+            const imgData = canvas.toDataURL('image/png');
+
+            // PDF dimensions
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = doc.internal.pageSize.getHeight() + 10;
+
+            // Image dimensions
+            const imgWidth = canvas.width / 6; // Adjust scaling factor as needed
+            const imgHeight = canvas.height / 6; // Adjust scaling factor as needed
+
+            // Calculate position to center the image
+            const x = (pdfWidth - imgWidth) / 2;
+            const y = (pdfHeight - imgHeight) / 2;
+
+            doc.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight + 10);
+            doc.save("newpdf.pdf");
+        }).catch(error => {
+            console.error("Error generating canvas:", error);
         });
-    }
+    };
+
 
     const TimeReturnFunction = (gtime) => {
         if (gtime.toLowerCase() === "morning")
@@ -35,28 +72,28 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
     // const forthPrize = ['07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922', '07474', '34994', '37779', '40166', '64668', '74023', '80332', '81893', '98451', '98922']
 
     return (
-        <div class="container">
+        <div class="containers">
 
 
             <div id="divID">
-                <div class="mainDiv">
+                <div class="mainDiv" id="pdfDiv">
                     <div className='topHeading'><h1>Hong Kong Lottery</h1></div>
                     <div className='headingDiv'>
 
-                        <div><img alt='noimage' src={logoImg} /></div>
+                        <div><img alt='noimage' src={logoImg} className='pdflogo' /></div>
                         <div className='hMiddle'>
-                            <h1 className='pxh'>PXWELL</h1>
+                            <h4 className='pxh'>PXWELL</h4>
                             <p className='lRes'>Lottery Result</p>
 
                             <p className='mor'>{gtime.toUpperCase()}</p>
                             <p className='pCom'>Pxwell.Com</p>
                         </div>
 
-                        <div><img alt='noimage' src={logoImg} /></div>
+                        <div><img alt='noimage' src={logoImg} className='pdflogo' /></div>
 
                     </div>
                     <div className='dTime'> <h1>{date}</h1> <h1>Time-{TimeReturnFunction(gtime)}</h1></div>
-                    <div className='prHeading'><h1>1st Prize/ {firstResult}</h1></div>
+                    <div className='prHeading'><h1>1st Prize / {firstResult}</h1></div>
                     <div className='sHeading'><h1>2ndPrize</h1></div>
                     <div className='sPrizes'>
                         {
@@ -77,6 +114,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                     <div className='sPrizes4'>
                         {
                             fourthResult.map((ele, id) => {
+
                                 return <p key={id} className='sRest'>{ele}</p>
                             })
                         }

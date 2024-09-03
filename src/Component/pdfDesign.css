@@ -36,9 +36,15 @@
     width: 100%; /* Make it responsive */
 }
 
-.topHeading, .headingDiv, .dTime, .prHeading, .sHeading, .sPrizes, .sPrizes4 {
-    position: relative;
-    z-index: 1;
+.topHeading,
+.headingDiv,
+.dTime,
+.prHeading,
+.sHeading,
+.sPrizes,
+.sPrizes4 {
+  position: relative;
+  z-index: 1;
 }
 
 #divID {
@@ -188,7 +194,7 @@
     }
 
     .prHeading h1 {
-        font-size: 1.5rem;/* Adjust font size */
+        font-size: 1.1rem;/* Adjust font size */
     }
 
     .sPrizes {

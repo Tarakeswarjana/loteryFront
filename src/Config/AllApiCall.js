@@ -45,43 +45,22 @@ const now = new Date();
 //     return now < targetDate;
 // }
 
-const viewliveUrl = async (gameDate, gameTime) => {
-    // const alltime = await getAllTime();
-
-    // let morningtime = alltime.data.filter(ele => ele.game_name.toLowerCase() === "morning");
-    // let noontime = alltime.data.filter(ele => ele.game_name.toLowerCase() === "noon");
-    // let Eveningtime = alltime.data.filter(ele => ele.game_name.toLowerCase() === "evening");
-
-    // let currentGameTime = "Unknown";
-
-    // if (morningtime.length > 0 && noontime.length > 0 && Eveningtime.length > 0) {
-    //     // Check if current time is within the morning and noon range
-    //     if (isTimeAfter(morningtime[0].game_time) && isTimeBefore(noontime[0].game_time)) {
-    //         currentGameTime = "Morning";
-    //     }
-
-    //     // Check if current time is within the noon and evening range
-    //     if (isTimeAfter(noontime[0].game_time) && isTimeBefore(Eveningtime[0].game_time)) {
-    //         currentGameTime = "Noon";
-    //     }
-
-    //     // Check if current time is within the evening and morning range
-    //     if (isTimeAfter(Eveningtime[0].game_time) && isTimeBefore(morningtime[0].game_time)) {
-    //         currentGameTime = "Evening";
-    //     }
-    // }
-
-
-    // console.log(gameTime, "6666");
-
-    // if(2PM>new Date()<6:30Pm){
-    // gameTime="Morning"
-    // }
+const viewliveUrl = async (gameTime, gameDate) => {
 
 
     let endpoint = `/fetch_youtubeUrl.php?game_type=${gameTime}&game_date=${gameDate}`
     const dataToSend = {}
     return await HttpClient.post(endpoint, dataToSend);
+};
+
+// const getFourthResultData = async (gameDate, gameName) => {
+//     const endpoint = `/fetch_fifth_result.php?game_date=${gameDate}&game_type=${gameName}`;
+//     return await HttpClient.get(endpoint);
+// };
+
+const getFourthResultData = async (gameDate, gameName) => {
+    const endpoint = `/fetch_fifth_result.php?game_date=${gameDate}&game_type=${gameName}`;
+    return await HttpClient.get(endpoint);
 };
 
 
@@ -103,5 +82,6 @@ export {
     searchLoteryResult,
     viewAllResult,
     searchsecondResult,
-    viewliveUrl
+    viewliveUrl,
+    getFourthResultData
 }
