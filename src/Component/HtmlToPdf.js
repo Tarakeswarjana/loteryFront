@@ -75,7 +75,14 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
         <div class="containers">
 
 
-            <div id="divID">
+            <div id="divID" style={{ display: "flex", flexDirection: 'column', paddingBottom: "40px", gap: "2px" }}>
+                <button
+                    type="button"
+                    className="bg-green-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-brown-600 transition ease-in-out duration-300 transform hover:scale-105 flex align-middle  justify-center"
+                    onClick={() => { convertHTMLtoPDF() }}
+                >
+                    Download
+                </button>
                 <div class="mainDiv" id="pdfDiv">
                     <div className='topHeading'><h1>Hong Kong Lottery</h1></div>
                     <div className='headingDiv'>
@@ -86,6 +93,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                             <p className='lRes'>Lottery Result</p>
 
                             <p className='mor'>{gtime.toUpperCase()}</p>
+
                             <p className='pCom'>Pxwell.Com</p>
                         </div>
 
@@ -124,13 +132,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
             </div>
 
 
-            <button
-                type="button"
-                className="bg-green-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-brown-600 transition ease-in-out duration-300 transform hover:scale-105 flex align-middle  justify-center"
-                onClick={() => { convertHTMLtoPDF() }}
-            >
-                PDF Download
-            </button>
+
         </div>
     )
 }

@@ -11,19 +11,23 @@
 .mainDiv {
     position: relative;
     padding: 20px 10px;
-    width: 90%; /* Adjust to be responsive */
-    max-width: 800px; /* Optional: to limit maximum width */
+    width: 90%;
+    height: 90vh;
+    max-width: 800px;
     background-color: white;
     padding-bottom: 30px;
     border: 1px solid grey;
     overflow: hidden;
 }
+.pdflogo{
+    width: 80%;
+}
 
 .mainDiv::before {
     content: "";
     position: absolute;
-    top: 13%;
-    left: 17%;
+    /* top: 13%; */
+    /* left: 17%; */
     right: 0;
     bottom: 0;
     background-image: url("../asssets/todayImg.png");
@@ -68,6 +72,7 @@
     margin: 0px 1rem; /* Adjust margin for responsiveness */
     display: flex;
     gap: 2rem;
+    height:175px;
     justify-content: space-between;
     align-items: center;
 }
@@ -112,7 +117,7 @@
 }
 
 .dTime h1 {
-    font-size: 2.5vw; /* Use viewport width for responsiveness */
+    font-size: 1.5vw; /* Use viewport width for responsiveness */
     font-weight: bold;
 }
 
@@ -123,7 +128,7 @@
 }
 
 .prHeading h1 {
-    font-size: 3vw; /* Use viewport width for responsiveness */
+    font-size: 1.8vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     border-bottom: 5px solid black;
 }
@@ -135,7 +140,7 @@
 }
 
 .sHeading h1 {
-    font-size: 2.5vw; /* Use viewport width for responsiveness */
+    font-size: 1.5vw; /* Use viewport width for responsiveness */
     font-weight: bold;
     border-bottom: 3px solid black;
 }
@@ -160,8 +165,8 @@
 }
 
 .sPrizes p {
-    margin-right: 29px;
-    font-size: 1.5rem; /* Adjust font size for responsiveness */
+    /* margin-right: 29px;
+    font-size: 1.5rem; Adjust font size for responsiveness */
     font-weight: bold;
 }
 
@@ -176,7 +181,7 @@
 }
 
 .sPrizes4 p {
-    font-size: 1.5rem; /* Adjust font size for responsiveness */
+    font-size: 1rem; /* Adjust font size for responsiveness */
     font-weight: bold;
 }
 
@@ -192,25 +197,36 @@
         margin-right: 1rem;
         width: auto; /* Adjust width */
     }
+    .dTime h1{
+        font-size: 9px;
+    }
+    .headingDiv{
+        height: 66px;
+    }
 
     .prHeading h1 {
         font-size: 1.1rem;/* Adjust font size */
     }
 
+.sRest{
+    font-size: 10px;
+}
     .sPrizes {
         margin-right: 0px;
         gap: .5rem; /* Adjust gap */
         margin-left: 0; /* Remove margins */
         margin-right: 0;
     }
-
+.sHeading h1{
+    font-size: 9px;
+}
     .sPrizes p {
-        font-size: 0.8rem;
+        font-size: 0.rem;
         margin-right: 0px;
     }
     
     .sPrizes4 p {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         margin-right: 0px;
     }
 }
