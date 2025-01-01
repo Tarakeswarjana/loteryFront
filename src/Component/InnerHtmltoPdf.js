@@ -1,51 +1,38 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { usePDF } from 'react-to-pdf';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import InnerHtmlToPdf from './InnerHtmltoPdf';
-import { DATACONTEXT } from '../Contexts/DataContext';
 // import './pdfDesign.css';
-const logoImg = require("../asssets/todayImg11.png");
+const logoImg = require('../asssets/todayImg.png');
 
-
-function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gtime }) {
-
-    const data = useContext(DATACONTEXT)
+function InnerHtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gtime }) {
     const { toPDF, targetRef } = usePDF({ filename: 'page.pdf' });
-
+    alert("kkkk")
     const TimeReturnFunction = (gtime) => {
         if (gtime.toLowerCase() === 'morning') return '2:30 PM';
         if (gtime.toLowerCase() === 'noon') return '6:30 PM';
         if (gtime.toLowerCase() === 'evening') return '10:00 PM';
     };
-    const [topposition, settopPosition] = useState(52)
-
-
-
     const downloadPDF = () => {
-        // settopPosition(60)
-        window.print()
 
-        // const { jsPDF } = window.jspdf;
+        alert("iii")
+        const { jsPDF } = window.jspdf;
 
-        // let doc = new jsPDF('l', 'mm', [1500, 1400]);
-        // let pdfjs = document.querySelector('#pdfDiv');
+        let doc = new jsPDF('l', 'mm', [1500, 1400]);
+        let pdfjs = document.querySelector('#pdfDiv');
 
-        // doc.html(pdfjs, {
-        //     callback: function (doc) {
-        //         doc.save("newpdf.pdf");
-        //     },
-        //     x: 12,
-        //     y: 12
-        // });
+        doc.html(pdfjs, {
+            callback: function (doc) {
+                doc.save("newpdf.pdf");
+            },
+            x: 12,
+            y: 12
+        });
     };
+
     useEffect(() => {
-        if (data.isclickdownload) {
-            downloadPDF()
-        }
-
-    }, [data.isclickdownload])
-
+        downloadPDF()
+    }, [])
 
 
 
@@ -57,19 +44,7 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
 
     return (
         <div className="container mx-auto p-4">
-            <img src={logoImg} alt="Background" style={{
-                position: 'absolute',
-                top: `${topposition}%`,
-                left: '50%',
-                transform: 'translate(-50%, -50%)', // Centers the image
-                opacity: '0.15',
-                width: '80%', // Make it responsive
-                height: '80%',
-                objectFit: 'contain', // Maintain aspect ratio of the image
-                zIndex: 0, // Ensure it's behind content
-                pointerEvents: 'none', // Make sure it doesn't block interaction with other content
-            }} />
-            <div className="flex flex-col p-4 bg-white shadow-md rounded-lg w-full max-w-3xl mx-auto">
+            <div id='pdfDiv' className="flex flex-col p-4 bg-white shadow-md rounded-lg w-full max-w-3xl mx-auto">
                 <div className="text-center mb-4">
                     <h1 className="text-2xl font-bold mb-2">Hong Kong Lottery</h1>
                 </div>
@@ -149,18 +124,11 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
                     </div>
                 </div> */}
             </div>
-            <div className="text-center mt-4" style={{ display: data.isclickdownload ? "none" : "" }}>
+            <div className="text-center mt-4">
                 <button
                     type="button"
                     className="bg-green-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-green-800 transition ease-in-out duration-300"
-                    onClick={() => {
-                        settopPosition(50)
-                        data.setisclickdownload(true)
-                        setTimeout(() => {
-                            data.setisclickdownload(false)
-                        }, 1000)
-
-                    }}
+                    onClick={() => downloadPDF()}
                 >
                     Download
                 </button>
@@ -169,4 +137,4 @@ function HtmlToPdf({ firstResult, secResult, thirdResult, fourthResult, date, gt
     );
 }
 
-export default HtmlToPdf;
+export default InnerHtmlToPdf;

@@ -9,18 +9,26 @@
 }
 
 .mainDiv {
+
+    
     position: relative;
     padding: 20px 10px;
-    width: 90%;
-    height: 90vh;
-    max-width: 800px;
+    width: 100vw;
+    height: 100vh;
+    /* max-width: 800px; */
     background-color: white;
     padding-bottom: 30px;
     border: 1px solid grey;
     overflow: hidden;
 }
+
 .pdflogo{
-    width: 80%;
+    width: 40%;
+}
+.imageClass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mainDiv::before {
@@ -64,15 +72,33 @@
 
 .topHeading {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Arrange items in a column for better alignment on smaller screens */
+    align-items: center;    /* Center items horizontally */
+    justify-content: center;/* Center items vertically */
+    text-align: center;     /* Center text content */
+    padding-bottom: 1.5rem;        /* Add padding for better spacing */
+    width: 100%;           /* Ensure it spans the full width */
 }
+
+@media screen and (max-width: 768px) {
+    .topHeading {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .topHeading {
+        font-size: 0.9rem; /* Adjust font size if needed */
+        padding: 0.25rem; /* Further reduce padding on very small screens */
+    }
+}
+
 
 .headingDiv {
     margin: 0px 1rem; /* Adjust margin for responsiveness */
     display: flex;
     gap: 2rem;
-    height:175px;
+    height:165px;
     justify-content: space-between;
     align-items: center;
 }
@@ -97,12 +123,18 @@
     color: green;
 }
 
+
+
 .mor {
     font-size: 2vw; /* Use viewport width for responsiveness */
     font-weight: bold;
-    border-bottom: 5px solid red;
-    color: red;
+    color: red; /* Set the text color */
+    border-bottom: 2px solid red; /* Create the underline effect and match the color */
+    line-height: 1.7; /* Adjust line height for spacing */
+    margin: 0; /* Remove default margin to avoid spacing issues */
+    padding-bottom: 2px; /* Fine-tune the space between text and underline */
 }
+
 
 .pCom {
     font-size: 1rem; /* Adjust font size for responsiveness */
@@ -126,12 +158,15 @@
     align-items: center;
     justify-content: center;
 }
-
 .prHeading h1 {
     font-size: 1.8vw; /* Use viewport width for responsiveness */
     font-weight: bold;
-    border-bottom: 5px solid black;
+    border-bottom: 2px solid black; /* Create the underline effect */
+    line-height: 1.8; /* Adjust line height for spacing */
+    margin: 0; /* Remove default margin to avoid spacing issues */
+    padding-bottom: 2px; /* Fine-tune the space between text and underline */
 }
+
 
 .sHeading {
     display: flex;
@@ -142,8 +177,21 @@
 .sHeading h1 {
     font-size: 1.5vw; /* Use viewport width for responsiveness */
     font-weight: bold;
-    border-bottom: 3px solid black;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the h1 */
+    padding-bottom: 3px; /* Adjust based on the space needed for the underline */
 }
+
+
+.sHeading h1 {
+    font-size: 1.8vw; /* Use viewport width for responsiveness */
+    font-weight: bold;
+    border-bottom: 2px solid black; /* Create the underline effect */
+    line-height: 1.8; /* Adjust line height for spacing */
+    margin: 0; /* Remove default margin to avoid spacing issues */
+    padding-bottom: 2px; /* Fine-tune the space between text and underline */
+}
+
+
 
 .prize3 {
     font-size: 2vw; /* Use viewport width for responsiveness */
@@ -188,13 +236,14 @@
 /* Media Queries */
 @media screen and (max-width: 1000px) {
     .mainDiv {
-        width: 90%; /* Adjust width to fit within smaller screens */
+          width: 100vw;  /* Adjust width to fit within smaller screens */
         padding: 10px; /* Adjust padding */
     }
 
     .dTime {
         margin-left: 1rem; /* Adjust margins */
         margin-right: 1rem;
+        margin-top: 1rem;
         width: auto; /* Adjust width */
     }
     .dTime h1{
@@ -209,7 +258,7 @@
     }
 
 .sRest{
-    font-size: 10px;
+    font-size: 7px;
 }
     .sPrizes {
         margin-right: 0px;
@@ -221,7 +270,7 @@
     font-size: 9px;
 }
     .sPrizes p {
-        font-size: 0.rem;
+        font-size: 0.6rem;
         margin-right: 0px;
     }
     

@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { viewAllResult } from '../Config/AllApiCall'
 import { ColorRing } from 'react-loader-spinner'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-const imgee = require('../asssets/todayImg.png')
+import { DATACONTEXT } from '../Contexts/DataContext';
+const imgee = require('../asssets/todayImg11.png')
 
 
 function Home() {
+
+
 
     const [results, setResults] = useState([])
     const [noonresults, setnoonResults] = useState([])
     const [eveningresults, seteveningResults] = useState([])
     const [isLoading, setisLoading] = useState(false)
+
 
 
 
@@ -64,7 +68,7 @@ function Home() {
             )}
 
 
-            <div className='ml-16 mr-16 mt-8 flex flex-col gap-6 flex-wrap'>
+            <div className='ml-16 mr-16 mt-8 flex flex-col gap-6 flex-wrap' >
                 {!isLoading && <Tabs>
                     <TabList>
                         <Tab >

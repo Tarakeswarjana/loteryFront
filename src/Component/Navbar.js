@@ -1,6 +1,9 @@
 // import React, { useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
 
+import { useContext } from "react"
+import { DATACONTEXT } from "../Contexts/DataContext"
+
 function Navbar() {
     // const [inputDate, setinputDate] = useState(null)
     // const navigate = useNavigate()
@@ -8,8 +11,10 @@ function Navbar() {
     //     const [year, month, day] = dateStr.split('-');
     //     return `${day}-${month}-${year}`;
     // }
+    const data = useContext(DATACONTEXT)
+    console.log(data.isclickdownload, "navbar000000")
     return (
-        <nav class="bg-gray-800 p-4 flex justify-between items-center">
+        <nav class="bg-gray-800 p-4 flex justify-between items-center" style={{ display: data.isclickdownload ? "none" : "" }}>
             <div class="flex items-center space-x-4">
                 <a href="/" class="text-white hover:bg-gray-700 px-3 py-2 rounded">Home</a>
                 {/* <a href="/today-result" class="text-white hover:bg-gray-700 px-3 py-2 rounded">Today Result</a> */}

@@ -2,7 +2,7 @@ import React from 'react'
 import HtmlToPdf from './HtmlToPdf'
 import moment from 'moment'
 import { useNavigate } from 'react-router-dom'
-const logo = require("../asssets/todayImg.png")
+const logo = require("../asssets/todayImg11.png")
 
 
 function TodyResult() {

@@ -5,26 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DataContext from './Contexts/DataContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ToastContainer
-      position="top-right"
-      autoClose={5000}
-    // hideProgressBar={false}
-    // newestOnTop={false}
-    // closeOnClick
-    // rtl={false}
-    // pauseOnFocusLoss
-    // draggable
-    // pauseOnHover
-    // theme="light"
-    // transition:Bounce
-    />
-    {/* Same as */}
-    <ToastContainer />
-    <App />
+    <DataContext>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+      />
+      {/* Same as */}
+      <ToastContainer />
+      <App />
+    </DataContext>
   </React.StrictMode>
 );
 

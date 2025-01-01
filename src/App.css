@@ -76,6 +76,7 @@
   100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
 }
 
+
 .loader{
   /* position: relative;
   margin: auto;
@@ -97,6 +98,18 @@
   height: 200px;
 }
 
-.result_main {
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the entire area */
+  z-index: 0; /* Behind the content */
+
+
+
+
+  
 }
